@@ -145,7 +145,7 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="809.6000000000001,1514.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="826.4000000000001,562.84" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="selectedFile" />
       <Variable x:TypeArguments="p3:Document" Name="documentObject" />
@@ -156,7 +156,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="544.8,1491.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="483.2,476" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="p6:ClassificationResult[]" Name="classifyResults" />
         <Variable x:TypeArguments="ss:SecureString" Name="assetAPI" />
@@ -168,8 +168,8 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="511.2,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start Document Understanding Processing&quot;]" />
-      <Sequence DisplayName="Initialize" sap:VirtualizedContainerService.HintSize="511.2,56.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start Document Understanding Processing&quot;]" />
+      <Sequence DisplayName="Initialize" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -189,7 +189,7 @@
         </Assign>
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Fetching API from Orchestrator&quot;]" />
       </Sequence>
-      <Sequence DisplayName="Digitization" sap:VirtualizedContainerService.HintSize="511.2,56.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <Sequence DisplayName="Digitization" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -220,7 +220,7 @@
         </p:DigitizeDocument>
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Digitizing Document&quot;]" />
       </Sequence>
-      <Sequence DisplayName="Classification" sap:VirtualizedContainerService.HintSize="511.2,56.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <Sequence DisplayName="Classification" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -339,14 +339,14 @@
           </If.Else>
         </If>
       </Sequence>
-      <Sequence DisplayName="Extraction" sap:VirtualizedContainerService.HintSize="511.2,1063.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <Sequence DisplayName="Extraction" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="Sequence_6">
         <Sequence.Variables>
           <Variable x:TypeArguments="p6:ExtractionResult" Name="extractionResults" />
           <Variable x:TypeArguments="sd2:DataSet" Name="dataExtraction" />
         </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
