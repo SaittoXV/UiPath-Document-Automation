@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:p2="http://schemas.uipath.com/workflow/activities/intelligentocr/classification" xmlns:p3="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p4="http://schemas.uipath.com/workflow/activities/document-processing-contracts/classification" xmlns:p5="http://schemas.uipath.com/workflow/activities/intelligentocr/training" xmlns:p6="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p7="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:p8="http://schemas.uipath.com/workflow/activities/document-processing-contracts/extraction" xmlns:p9="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:p10="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:p2="http://schemas.uipath.com/workflow/activities/intelligentocr/classification" xmlns:p3="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p4="http://schemas.uipath.com/workflow/activities/document-processing-contracts/classification" xmlns:p5="http://schemas.uipath.com/workflow/activities/intelligentocr/training" xmlns:p6="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p7="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:p8="http://schemas.uipath.com/workflow/activities/documentunderstanding-ml" xmlns:p9="http://schemas.uipath.com/workflow/activities/document-processing-contracts/extraction" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -145,7 +145,7 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="856.8000000000001,589.24" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="809.6000000000001,1633.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="selectedFile" />
       <Variable x:TypeArguments="p3:Document" Name="documentObject" />
@@ -156,20 +156,20 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="483.2,476" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="544.8,1610.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="p6:ClassificationResult[]" Name="classifyResults" />
         <Variable x:TypeArguments="ss:SecureString" Name="assetAPI" />
         <Variable x:TypeArguments="x:String" Name="keyAPI" />
-        <Variable x:TypeArguments="p9:DocumentTaxonomy" Name="taxonomyLoad" />
+        <Variable x:TypeArguments="p10:DocumentTaxonomy" Name="taxonomyLoad" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start Document Understanding Processing&quot;]" />
-      <Sequence DisplayName="Initialize" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="511.2,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start Document Understanding Processing&quot;]" />
+      <Sequence DisplayName="Initialize" sap:VirtualizedContainerService.HintSize="511.2,56.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -189,14 +189,14 @@
         </Assign>
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Fetching API from Orchestrator&quot;]" />
       </Sequence>
-      <Sequence DisplayName="Digitization" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <Sequence DisplayName="Digitization" sap:VirtualizedContainerService.HintSize="511.2,56.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <p:DigitizeDocument ApplyOcrMigrated="False" ApplyOcrOnPdf="Auto" DegreeOfParallelism="-1" DetectCheckboxes="True" DisplayName="Digitize Document" DocumentObjectModel="[documentObject]" DocumentPath="[selectedFile]" DocumentText="[documentText]" ForceApplyOCR="False" sap:VirtualizedContainerService.HintSize="416,332" sap2010:WorkflowViewState.IdRef="DigitizeDocument_2">
+        <p:DigitizeDocument ApplyOcrMigrated="True" ApplyOcrOnPdf="Auto" DegreeOfParallelism="-1" DetectCheckboxes="True" DisplayName="Digitize Document" DocumentObjectModel="[documentObject]" DocumentPath="[selectedFile]" DocumentText="[documentText]" ForceApplyOCR="False" sap:VirtualizedContainerService.HintSize="416,332" sap2010:WorkflowViewState.IdRef="DigitizeDocument_2">
           <p:DigitizeDocument.OCREngine>
             <ActivityFunc x:TypeArguments="sd:Image, x:String, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))" Argument1="{x:Reference __ReferenceID0}" Argument2="{x:Reference __ReferenceID1}">
               <p1:UiPathDocumentOCR Output="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ApiKey="[keyAPI]" ComputeSkewAngle="False" DisplayName="UiPath Document OCR" Endpoint="https://du.uipath.com/ocr" ExtractWords="True" sap:VirtualizedContainerService.HintSize="312,24.8" sap2010:WorkflowViewState.IdRef="UiPathDocumentOCR_1" Language="auto" NoopExecution="False" Profile="None" Scale="1" Timeout="100000">
@@ -220,7 +220,7 @@
         </p:DigitizeDocument>
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Digitizing Document&quot;]" />
       </Sequence>
-      <Sequence DisplayName="Classification" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <Sequence DisplayName="Classification" sap:VirtualizedContainerService.HintSize="511.2,56.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -339,75 +339,75 @@
           </If.Else>
         </If>
       </Sequence>
-      <Sequence DisplayName="Extraction" sap:VirtualizedContainerService.HintSize="511.20000000000005,1128" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <Sequence DisplayName="Extraction" sap:VirtualizedContainerService.HintSize="511.2,1182.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
         <Sequence.Variables>
           <Variable x:TypeArguments="p6:ExtractionResult" Name="extractionResults" />
           <Variable x:TypeArguments="sd2:DataSet" Name="dataExtraction" />
         </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <p7:DataExtractionScope DocumentTypeId="{x:Null}" RuntimeAssetPath="{x:Null}" RuntimeTenantUrl="{x:Null}" ApplyGenerativeValidation="False" ClassificationResult="[classifyResults(0)]" DisplayName="Data Extraction Scope" DocumentObjectModel="[documentObject]" DocumentPath="[selectedFile]" DocumentText="[documentText]" ExtractionResult="[extractionResults]" FormatValuesIfPossible="True" GenerativeValidationConfidenceThreshold="99" sap:VirtualizedContainerService.HintSize="477.6,522.4" sap2010:WorkflowViewState.IdRef="DataExtractionScope_1" Taxonomy="[taxonomyLoad]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UI87b6f16133e54f3da58e34c182c5acd9&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;Finance.NoCategory.Invoice&quot;:{&quot;FieldMappings&quot;:{&quot;Finance.NoCategory.Invoice.InvoiceNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Finance.NoCategory.Invoice.InvoiceNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Finance.NoCategory.Invoice.InvoiceDate&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Finance.NoCategory.Invoice.InvoiceDate&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Finance.NoCategory.Invoice.DueDate&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Finance.NoCategory.Invoice.DueDate&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Finance.NoCategory.Invoice.TaxID&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Finance.NoCategory.Invoice.TaxID&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Finance.NoCategory.Invoice.Address&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Finance.NoCategory.Invoice.Address&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Finance.NoCategory.Invoice.Email&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Finance.NoCategory.Invoice.Email&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Finance.NoCategory.Invoice.Bank&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Finance.NoCategory.Invoice.Bank&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;Finance.NoCategory.Receipt&quot;:{&quot;FieldMappings&quot;:{},&quot;ExtractorDocumentTypeId&quot;:null}}}},&quot;ExtractorMinimumConfidence&quot;:{&quot;UI87b6f16133e54f3da58e34c182c5acd9&quot;:&quot;0&quot;},&quot;ExtractorsAliases&quot;:{},&quot;DocumentTypeOptionsByExtractor&quot;:{&quot;UI87b6f16133e54f3da58e34c182c5acd9&quot;:[]}}">
+        <p7:DataExtractionScope DocumentTypeId="{x:Null}" RuntimeAssetPath="{x:Null}" RuntimeTenantUrl="{x:Null}" ApplyGenerativeValidation="False" ClassificationResult="[classifyResults(0)]" DisplayName="Data Extraction Scope" DocumentObjectModel="[documentObject]" DocumentPath="[selectedFile]" DocumentText="[documentText]" ExtractionResult="[extractionResults]" FormatValuesIfPossible="True" GenerativeValidationConfidenceThreshold="99" sap:VirtualizedContainerService.HintSize="477.6,553.6" sap2010:WorkflowViewState.IdRef="DataExtractionScope_1" Taxonomy="[taxonomyLoad]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{},&quot;ExtractorMinimumConfidence&quot;:{},&quot;ExtractorsAliases&quot;:{},&quot;DocumentTypeOptionsByExtractor&quot;:{&quot;UIed0328c422b44b2392a3dbe3351b15bd&quot;:[]}}">
           <p7:DataExtractionScope.AvailableAssetPaths>
             <x:Array Type="x:String">
               <x:String>syabakar.syafirdaus@appfuxion.com's workspace/Document Understanding API Key</x:String>
             </x:Array>
           </p7:DataExtractionScope.AvailableAssetPaths>
           <p7:DataExtractionScope.Extractors>
-            <p7:FormExtractor SerializedSignatureFields="{x:Null}" ApiKey="[keyAPI]" DisplayName="Form Extractor" Endpoint="https://du.uipath.com/svc/formextractor" sap:VirtualizedContainerService.HintSize="281.6,164" sap2010:WorkflowViewState.IdRef="FormExtractor_1" MinOverlapPercentage="65" PersistenceId="UI87b6f16133e54f3da58e34c182c5acd9" SendDocumentsForAlgorithmImprovements="True" SerializedSettings="{}{}" SerializedTemplates="[{&quot;DocumentTypeId&quot;:&quot;Finance.NoCategory.Invoice&quot;,&quot;FormId&quot;:&quot;c85943f0&quot;,&quot;FormName&quot;:&quot;Invoice Template&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,612.0,792.0],&quot;SkewAngle&quot;:-0.1,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;Invoice&quot;,&quot;Box&quot;:[207.47,126.93,37.07,9.87]},{&quot;Text&quot;:&quot;Your&quot;,&quot;Box&quot;:[232.27,125.6,13.87,6.13]},{&quot;Text&quot;:&quot;Account&quot;,&quot;Box&quot;:[232.53,139.73,23.47,6.4]},{&quot;Text&quot;:&quot;No.&quot;,&quot;Box&quot;:[233.07,164.0,10.4,5.87]},{&quot;Text&quot;:&quot;Your&quot;,&quot;Box&quot;:[241.6,125.87,13.6,6.13]},{&quot;Text&quot;:&quot;VAT&quot;,&quot;Box&quot;:[241.87,140.27,11.73,5.87]},{&quot;Text&quot;:&quot;No.&quot;,&quot;Box&quot;:[242.13,152.8,10.4,6.13]},{&quot;Text&quot;:&quot;Your&quot;,&quot;Box&quot;:[251.2,125.6,13.87,5.87]},{&quot;Text&quot;:&quot;Registration&quot;,&quot;Box&quot;:[251.2,140.27,33.07,7.47]},{&quot;Text&quot;:&quot;No.&quot;,&quot;Box&quot;:[252.0,174.4,10.13,5.87]},{&quot;Text&quot;:&quot;Your&quot;,&quot;Box&quot;:[260.53,125.6,13.87,6.13]},{&quot;Text&quot;:&quot;Order&quot;,&quot;Box&quot;:[260.53,140.0,16.8,6.13]},{&quot;Text&quot;:&quot;No.&quot;,&quot;Box&quot;:[260.8,157.6,10.13,6.13]},{&quot;Text&quot;:&quot;Your&quot;,&quot;Box&quot;:[269.87,125.6,13.87,5.87]},{&quot;Text&quot;:&quot;Transport&quot;,&quot;Box&quot;:[269.87,140.0,26.93,7.73]},{&quot;Text&quot;:&quot;A/C&quot;,&quot;Box&quot;:[270.4,167.47,11.2,6.67]},{&quot;Text&quot;:&quot;No.&quot;,&quot;Box&quot;:[270.93,179.47,10.13,5.87]},{&quot;Text&quot;:&quot;Your&quot;,&quot;Box&quot;:[279.2,125.6,13.87,5.87]},{&quot;Text&quot;:&quot;Ref.&quot;,&quot;Box&quot;:[279.2,140.27,11.2,6.4]},{&quot;Text&quot;:&quot;Our&quot;,&quot;Box&quot;:[234.67,345.07,11.2,5.87]},{&quot;Text&quot;:&quot;Order&quot;,&quot;Box&quot;:[234.67,356.8,16.27,6.13]},{&quot;Text&quot;:&quot;No.&quot;,&quot;Box&quot;:[234.93,373.87,10.13,5.87]},{&quot;Text&quot;:&quot;Our&quot;,&quot;Box&quot;:[244.0,345.07,11.2,6.13]},{&quot;Text&quot;:&quot;VAT&quot;,&quot;Box&quot;:[244.0,356.8,11.73,5.87]},{&quot;Text&quot;:&quot;No.&quot;,&quot;Box&quot;:[244.27,369.6,9.87,5.87]},{&quot;Text&quot;:&quot;Salesperson&quot;,&quot;Box&quot;:[262.4,345.07,32.53,7.47]}],&quot;Fields&quot;:[],&quot;Tables&quot;:[]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[{&quot;FieldId&quot;:&quot;Finance.NoCategory.Invoice.InvoiceNumber&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-9.4426,18.2746,61.0132,19.3001],&quot;Target&quot;:{&quot;Text&quot;:&quot;Invoice&quot;,&quot;Area&quot;:[207.47,126.93,37.07,9.87]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;Finance.NoCategory.Invoice.InvoiceDate&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-5.0016,38.5855,37.355,8.7162],&quot;Target&quot;:{&quot;Text&quot;:&quot;Date&quot;,&quot;Area&quot;:[119.47,347.73,13.07,6.4]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;Finance.NoCategory.Invoice.DueDate&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-6.0892,64.3759,36.7325,9.9613],&quot;Target&quot;:{&quot;Text&quot;:&quot;Due&quot;,&quot;Area&quot;:[305.6,344.53,11.47,6.13]},&quot;Anchors&quot;:[{&quot;Text&quot;:&quot;Date&quot;,&quot;Area&quot;:[305.6,356.8,13.33,6.13]}]}]},{&quot;FieldId&quot;:&quot;Finance.NoCategory.Invoice.TaxID&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-4.3564,66.0693,35.4873,8.7162],&quot;Target&quot;:{&quot;Text&quot;:&quot;Your&quot;,&quot;Area&quot;:[232.27,125.6,13.87,6.13]},&quot;Anchors&quot;:[{&quot;Text&quot;:&quot;Account&quot;,&quot;Area&quot;:[232.53,139.73,23.47,6.4]},{&quot;Text&quot;:&quot;No.&quot;,&quot;Area&quot;:[233.07,164.0,10.4,5.87]}]}]},{&quot;FieldId&quot;:&quot;Finance.NoCategory.Invoice.Address&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[1.8676,-21.4019,74.7101,45.4486],&quot;Target&quot;:{&quot;Text&quot;:&quot;Delivery&quot;,&quot;Area&quot;:[142.93,347.2,24.53,8.0]},&quot;Anchors&quot;:[{&quot;Text&quot;:&quot;Address&quot;,&quot;Area&quot;:[143.2,372.27,24.0,6.67]}]}]},{&quot;FieldId&quot;:&quot;Finance.NoCategory.Invoice.Bank&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[5.0301,-16.956,36.1099,9.9613],&quot;Target&quot;:{&quot;Text&quot;:&quot;Payment&quot;,&quot;Area&quot;:[622.67,127.47,24.27,7.2]},&quot;Anchors&quot;:[{&quot;Text&quot;:&quot;Information&quot;,&quot;Area&quot;:[622.4,152.53,32.27,6.13]}]}]}]}}]" Timeout="100000">
-              <p7:FormExtractor.DocumentBounds>
+            <p8:MachineLearningExtractor AvailableMLSkills="{x:Null}" Configuration="{x:Null}" Endpoint="{x:Null}" SelectedMLSkill="{x:Null}" ApiKey="[keyAPI]" DisplayName="Machine Learning Extractor" sap:VirtualizedContainerService.HintSize="313.6,195.2" sap2010:WorkflowViewState.IdRef="MachineLearningExtractor_1" PersistenceId="UIed0328c422b44b2392a3dbe3351b15bd" RetryOnFailure="True" Timeout="100000" UseServerSideOCR="False">
+              <p8:MachineLearningExtractor.DocumentBounds>
                 <InArgument x:TypeArguments="p6:ResultsDocumentBounds">
                   <DelegateArgumentValue x:TypeArguments="p6:ResultsDocumentBounds">
                     <DelegateInArgument x:TypeArguments="p6:ResultsDocumentBounds" Name="DocumentBounds" />
                   </DelegateArgumentValue>
                 </InArgument>
-              </p7:FormExtractor.DocumentBounds>
-              <p7:FormExtractor.DocumentObjectModel>
+              </p8:MachineLearningExtractor.DocumentBounds>
+              <p8:MachineLearningExtractor.DocumentObjectModel>
                 <InArgument x:TypeArguments="p3:Document">
                   <DelegateArgumentValue x:TypeArguments="p3:Document">
                     <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
                   </DelegateArgumentValue>
                 </InArgument>
-              </p7:FormExtractor.DocumentObjectModel>
-              <p7:FormExtractor.DocumentPath>
+              </p8:MachineLearningExtractor.DocumentObjectModel>
+              <p8:MachineLearningExtractor.DocumentPath>
                 <InArgument x:TypeArguments="x:String">
                   <DelegateArgumentValue x:TypeArguments="x:String">
                     <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
                   </DelegateArgumentValue>
                 </InArgument>
-              </p7:FormExtractor.DocumentPath>
-              <p7:FormExtractor.DocumentText>
+              </p8:MachineLearningExtractor.DocumentPath>
+              <p8:MachineLearningExtractor.DocumentText>
                 <InArgument x:TypeArguments="x:String">
                   <DelegateArgumentValue x:TypeArguments="x:String">
                     <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
                   </DelegateArgumentValue>
                 </InArgument>
-              </p7:FormExtractor.DocumentText>
-              <p7:FormExtractor.ExtractorDocumentType>
-                <InArgument x:TypeArguments="p8:ExtractorDocumentType">
-                  <DelegateArgumentValue x:TypeArguments="p8:ExtractorDocumentType">
-                    <DelegateInArgument x:TypeArguments="p8:ExtractorDocumentType" Name="ExtractorDocumentType" />
+              </p8:MachineLearningExtractor.DocumentText>
+              <p8:MachineLearningExtractor.ExtractorDocumentType>
+                <InArgument x:TypeArguments="p9:ExtractorDocumentType">
+                  <DelegateArgumentValue x:TypeArguments="p9:ExtractorDocumentType">
+                    <DelegateInArgument x:TypeArguments="p9:ExtractorDocumentType" Name="ExtractorDocumentType" />
                   </DelegateArgumentValue>
                 </InArgument>
-              </p7:FormExtractor.ExtractorDocumentType>
-              <p7:FormExtractor.ExtractorResult>
-                <OutArgument x:TypeArguments="p8:ExtractorResult">
-                  <DelegateArgumentReference x:TypeArguments="p8:ExtractorResult">
-                    <DelegateOutArgument x:TypeArguments="p8:ExtractorResult" Name="ExtractorResult" />
+              </p8:MachineLearningExtractor.ExtractorDocumentType>
+              <p8:MachineLearningExtractor.ExtractorResult>
+                <OutArgument x:TypeArguments="p9:ExtractorResult">
+                  <DelegateArgumentReference x:TypeArguments="p9:ExtractorResult">
+                    <DelegateOutArgument x:TypeArguments="p9:ExtractorResult" Name="ExtractorResult" />
                   </DelegateArgumentReference>
                 </OutArgument>
-              </p7:FormExtractor.ExtractorResult>
-              <p7:FormExtractor.PredictionId>
+              </p8:MachineLearningExtractor.ExtractorResult>
+              <p8:MachineLearningExtractor.PredictionId>
                 <InArgument x:TypeArguments="x:String">
                   <DelegateArgumentValue x:TypeArguments="x:String">
                     <DelegateInArgument x:TypeArguments="x:String" Name="PredictionId" />
                   </DelegateArgumentValue>
                 </InArgument>
-              </p7:FormExtractor.PredictionId>
-            </p7:FormExtractor>
+              </p8:MachineLearningExtractor.PredictionId>
+            </p8:MachineLearningExtractor>
           </p7:DataExtractionScope.Extractors>
         </p7:DataExtractionScope>
         <p7:ExportExtractionResults DataSet="[dataExtraction]" DisplayName="Export Extraction Results" ExtractionResult="[extractionResults]" sap:VirtualizedContainerService.HintSize="477.6,208.8" sap2010:WorkflowViewState.IdRef="ExportExtractionResults_1" IncludeConfidence="False" IncludeOCRConfidence="False" />
@@ -417,7 +417,7 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sd2:DataTable" Name="currentDataTable" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,199.2" sap2010:WorkflowViewState.IdRef="Sequence_11">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
